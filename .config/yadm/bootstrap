@@ -1,0 +1,13 @@
+#/bin/sh
+
+BOOTSTRAP_SCRIPT_PATH=$(readlink -f "$0")
+BOOTSTRAP_DIR=$(dirname "$BOOTSTRAP_SCRIPT_PATH")
+if [ ! -d "$BOOTSTRAP_DIR" ]; then BOOTSTRAP_DIR="$PWD"; fi
+
+if [ -f "$BOOTSTRAP_DIR/bootstrap.sh" ]; then
+   . "$BOOTSTRAP_DIR/bootstrap.sh"
+else
+   echo "ERROR: The script $BOOTSTRAP_DIR/bootstrap.sh doesn't exist!!"
+   exit 1
+fi
+
