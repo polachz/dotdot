@@ -34,14 +34,23 @@ fi
 
 #create wsl.conf
 if [ -f "$WSL_CONF_FILE" ]; then
-   echo "WARNING: The file $WSL_CONF_FILE exists. Merge changes manually, please."
+   if ! check_line_presence '[user]' $WSL_CONF_FILE; then
+      echo "INFO: $WSL_CONF_FILE exists, but user section not found. creating..."
+      sudo  echo "[user]" >> $WSL_CONF_TMP
+      sudo  echo "default=$USER" >> $WSL_CONF_TMP
+   else
+      if ! check_line_presence "default=$USER" $WSL_CONF_FILE; then
+         echo "WARNING: The file $WSL_CONF_FILE exists."
+         echo "Unable to modify automatically. Please Merge changes yourself"
+      fi
+   fi
 else
    echo "Creating $WSL_CONF_FILE ..."
    WSL_CONF_TMP=$( mktemp )
    echo "[user]" >> $WSL_CONF_TMP
    echo "default=$USER" >> $WSL_CONF_TMP
    sudo mv $WSL_CONF_TMP $WSL_CONF_FILE
-   sudo chown 0:0  $WSL_CONF_FILE 
+   sudo chown 0:0  $WSL_CONF_FILE
    sudo chmod 644  $WSL_CONF_FILE
    if [ ! -f "$WSL_CONF_FILE" ]; then
       echo "ERROR - Unable to create $WSL_CONF_FILE !!"
