@@ -1,2 +1,2 @@
 # dotdot
-My personla config and bootstrap linux files
+My personal config and bootstrap linux files
