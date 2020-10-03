@@ -8,9 +8,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion"  ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-nvm install 10
-nvm use 10
+nvm install 14
+nvm use 14
 
+npm install react react-dom
 npm install -g gatsby-cli
 
 
