@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo dnf install make g++
+
 cd ~
 
 wget -O - https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
