@@ -45,9 +45,9 @@ if [ -z "$1"  ]; then
    dump_usage
 fi
 
-echo "Converting \"$1\" file to \"$OUTPUT_FILE\" with format \"$OUTPUT_FORMAT\""
+echo -e "\nConverting \"$1\" file to \"$OUTPUT_FILE\" with format \"$OUTPUT_FORMAT\""
 
-#pandoc -f docx -t "$OUTPUT_FORMAT"  -o "$OUTPUT_FILE" "$SOURCE_FILE"
+pandoc -f docx -t "$OUTPUT_FORMAT"  -o "$OUTPUT_FILE" "$SOURCE_FILE"
 
 echo ""
 echo "Done.."
