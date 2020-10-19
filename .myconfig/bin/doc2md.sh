@@ -47,8 +47,7 @@ fi
 
 echo -e "\nConverting \"$1\" file to \"$OUTPUT_FILE\" with format \"$OUTPUT_FORMAT\""
 
-pandoc -f docx -t "$OUTPUT_FORMAT"  -o "$OUTPUT_FILE" "$SOURCE_FILE"
+pandoc -f docx -t "$OUTPUT_FORMAT"  -o "$OUTPUT_FILE" "$1"
 
-echo ""
-echo "Done.."
+echo -e "\nDone..\n"
 
