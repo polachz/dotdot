@@ -10,3 +10,20 @@ alias makeroot='sudo chown 0:0'
 alias hh='cd ~'
 alias ee='cd /etc'
 
+alias sha='shasum -a 256 '
+
+alias ping='ping -c 5'
+alias ports='netstat -tulanp'
+
+if [ $UID -ne 0 ]; then
+   alias reboot='sudo /sbin/reboot'
+   alias poweroff='sudo /sbin/poweroff'
+   alias halt='sudo /sbin/halt'
+   alias shutdown='sudo /sbin/shutdown'
+   alias shutdownnow='sudo /sbin/shutdown -h now'
+else
+   alias shutdownnow='/sbin/shutdown -h now'
+fi
+
+alias root='sudo -i'
+alias su='sudo -i'
