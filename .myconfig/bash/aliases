@@ -26,4 +26,4 @@ else
 fi
 
 alias root='sudo -i'
-alias su='sudo -i'
+
