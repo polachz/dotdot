@@ -3,3 +3,5 @@
 	name = polachz
 [core]
 	editor = vim
+[submodule]
+	recurse = true
