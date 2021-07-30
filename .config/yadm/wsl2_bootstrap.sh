@@ -2,8 +2,7 @@
 
 SSH_HOME_DIR="$HOME/.ssh"
 WSL_CONF_FILE="/etc/wsl.conf"
-PAGEANT_EXE_URL="https://github.com/BlackReloaded/wsl2-ssh-pageant/releases/download/v1.2.0/wsl2-ssh-pageant.exe"
-
+PAGEANT_EXE_URL="https://github.com/BlackReloaded/wsl2-ssh-pageant/releases/download/v1.3.0/wsl2-ssh-pageant.exe"
 if [ ! -d "$SSH_HOME_DIR" ]; then
    mkdir  "$SSH_HOME_DIR"
    chmod 750 "$SSH_HOME_DIR"
