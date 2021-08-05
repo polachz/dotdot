@@ -24,9 +24,16 @@ cd "$HOME/blog"
 
 npm install gatsby
 
-#now try to open VS code with blog folder
-code "$HOME/blog"
+detect_wsl_subsystem
+
+if [ $WSL_VERSION -eq 2 ]; then
+   #now try to open VS code with blog folder
+   code "$HOME/blog"
+fi
 
 #and run here
 # gatsby develop
+echo "to develop the blog, run:"
+echo "cd ~/blog"
+echo "gatsby develop"
 
