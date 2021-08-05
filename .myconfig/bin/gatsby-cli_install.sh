@@ -4,7 +4,7 @@ sudo dnf install make g++
 
 cd ~
 
-wget -O - https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+wget -O - https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
