@@ -38,7 +38,7 @@ if [ -f "$WSL_CONF_FILE" ]; then
       sudo  echo "[user]" >> $WSL_CONF_TMP
       sudo  echo "default=$USER" >> $WSL_CONF_TMP
    else
-      if ! check_line_presence "default=$USER" $WSL_CONF_FILE; then
+      if ! check_line_presence "default=\"$USER\"" $WSL_CONF_FILE; then
          echo "WARNING: The file $WSL_CONF_FILE exists."
          echo "Unable to modify automatically. Please Merge changes yourself"
       fi
