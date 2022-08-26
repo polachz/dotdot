@@ -2,11 +2,11 @@
 is_true () {
    if [ $1 -ne 0 ] 2> /dev/null; then
       return 0
-   fi	
-   if [ "$1" = "yes" ]; then 
+   fi
+   if [ "$1" = "yes" ]; then
       return 0
    fi
-   if [ "$1" = 'true' ]; then 
+   if [ "$1" = 'true' ]; then
       return 0
    fi
    return 1
@@ -15,11 +15,11 @@ is_true () {
 is_false () {
    if [ $1 -eq 0 ] 2> /dev/null; then
       return 0
-   fi	
-   if [ $1 = 'no' ]; then 
+   fi
+   if [ $1 = 'no' ]; then
       return 0
    fi
-   if [ $1 = 'false' ]; then 
+   if [ $1 = 'false' ]; then
       return 0
    fi
    return 1
@@ -58,7 +58,7 @@ replace_or_add_line () {
 
 replace_or_add_line_strict () {
 #params line_search_pattern, new_line_value _file_where_to_replace_or_add
-#Line must exactly beginning with line_search_pattern to be processed 
+#Line must exactly beginning with line_search_pattern to be processed
 #useful to change obly uncommented lines (not beginning by #)
    if check_line_presence "$1" "$3"; then
       #line present. replace
@@ -76,7 +76,7 @@ replace_line () {
       sed -i "s~.*$1.*~$2~g" "$3"
    fi
 }
-									    
+
 # Running under WSL (Windows Subsystem for Linux)?
 detect_wsl_subsystem () {
 
@@ -113,6 +113,16 @@ install_binary () {
       return 1
    fi
 
-   sudo  $PKG_MGR install $1 > /dev/null 2>&1 
+   sudo  $PKG_MGR install $1 > /dev/null 2>&1
 
 }
+
+trim () {
+    local var="$*"
+    # remove leading whitespace characters
+    var="${var#"${var%%[![:space:]]*}"}"
+    # remove trailing whitespace characters
+    var="${var%"${var##*[![:space:]]}"}"
+    echo "$var"
+}
+
