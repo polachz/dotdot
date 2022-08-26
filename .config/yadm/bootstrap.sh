@@ -28,7 +28,7 @@ if [ -f "$RESOURCE_FILE_TO_MODIFY" ]; then
       echo '#'  >>  "$RESOURCE_FILE_TO_MODIFY"
       echo ''  >>  "$RESOURCE_FILE_TO_MODIFY"
       echo 'if [ -d ~/.myconfig/bash ]; then' >>  "$RESOURCE_FILE_TO_MODIFY"
-      echo '   BASH_PERSONAL_CFG_DIR="$HOME/.myconfig/bash"' >>  "$RESOURCE_FILE_TO_MODIFY"
+      echo '   export BASH_PERSONAL_CFG_DIR="$HOME/.myconfig/bash"' >>  "$RESOURCE_FILE_TO_MODIFY"
       echo 'fi'  >>  "$RESOURCE_FILE_TO_MODIFY"
       echo '   '  >>  "$RESOURCE_FILE_TO_MODIFY"
       echo 'if [ -f "$BASH_PERSONAL_CFG_DIR/bashrc.sh" ]; then'  >>  "$RESOURCE_FILE_TO_MODIFY"
