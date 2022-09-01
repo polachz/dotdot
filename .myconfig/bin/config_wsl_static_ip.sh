@@ -5,11 +5,13 @@ WSL_NET_CONFIG_FILE="/etc/sysconfig/wsl-net-cfg"
 
 help()
 {
-    echo "Usage: config_wsl_static_ip.sh ipaddrandrangeCIDR 
-               [ -f | --fqdn  hostFQDN] 
-               [ -d | --dns dnsIP ]
-               [ -g | --gateway gatewayIP]
-               [ -h | --help  ]"
+    echo ""
+    echo "Usage: config_wsl_static_ip.sh IpaddrAndRangeCIDR 
+          [ -f | --fqdn  hostFQDN] 
+          [ -d | --dns dnsIP ]
+          [ -g | --gateway gatewayIP]
+          [ -h | --help  ]"
+    echo ""
     exit 2
 }
 #$1 is IP and mask, in CIDR
@@ -52,6 +54,9 @@ while [[ $# -gt 0 ]]; do
     -n|--nofqdn)
       MODIFY_FQDN="no"
       shift # past argument with no value
+      ;;
+    -h | --help)
+      help
       ;;
     -*|--*)
       echo "Unknown option $1"
