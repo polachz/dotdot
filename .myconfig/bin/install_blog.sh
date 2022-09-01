@@ -9,7 +9,7 @@ if [ ! -d "$HOME/.nvm" ]; then
      echo "Installing NVM and gatsby-cli..."
      #Instal nvm ang gatsby cli - we have this in the path in my environment
      #then call it directly without any magic
-     gatsby-cli_install.sh
+     install_gatsby-cli.sh
 fi
 
 export NVM_DIR="$HOME/.nvm"
