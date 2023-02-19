@@ -27,7 +27,7 @@ if [ $WSL_VERSION -eq 2 ]; then
 
    if [ -f "/bin/set_wsl_static_ip.sh" ]; then
       wsl.exe -u root -d $(hostname) /bin/set_wsl_static_ip.sh
-   fi 
+   fi
 fi
 
 if [ -d ~/.nvm ]; then
@@ -39,4 +39,6 @@ fi
 if is_true $WSL_PRESENT; then
   cd ~
 fi
+## To make Cerberos and  Python happy -> to use global ca file
+export REQUESTS_CA_BUNDLE=/etc/pki/tls/certs/ca-bundle.crt
 

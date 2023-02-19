@@ -1,6 +1,6 @@
 
 WSL_IP="172.18.18.22/24"
 WSL_GW="172.18.18.1"
-WSL_HOST_FQDN="avastntb.home.polach.me"
+WSL_HOST_FQDN="axe.home.polach.me"
 WSL_DNS="172.18.18.1"
 
