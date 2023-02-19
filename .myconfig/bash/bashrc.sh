@@ -36,9 +36,6 @@ if [ -d ~/.nvm ]; then
    fi
 fi
 
-#if is_true $WSL_PRESENT; then
-#  cd ~
-#fi
-## To make Cerberos and  Python happy -> to use global ca file
+## To make Kerberos and  Python happy -> to use global ca file
 export REQUESTS_CA_BUNDLE=/etc/pki/tls/certs/ca-bundle.crt
 
