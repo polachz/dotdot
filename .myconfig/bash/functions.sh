@@ -191,3 +191,40 @@ validate_ip() {
    fi
 }
 
+#in the file template_file replaces
+# %template_var% by valute_to set
+#example:
+#This is line with %VALUE_TO_REPLACE% in template
+#
+# apply_var_to_template file VALUE_TO_REPLACE 1234
+#
+#result:
+#
+#This is line with 1234 in template
+#
+apply_var_to_template () {
+#template_file, template_var value_to_set
+
+   #sed -i -e "s;%${$2}%;${$3};g" "$1"
+   sed -i -e "s;%$2%;$3;g" $1
+}
+
+#copy file from PERSONAL_TEMPLATES_DIR to PERSONAL_BASRC_D_DIR
+copy_template_file_to_bashrc_d () {
+   #template file name
+
+   if [ -f "$PERSONAL_TEMPLATES_DIR/$1" ]; then
+      if [ ! -d "$PERSONAL_BASRC_D_DIR" ]; then
+         mkdir -p "$PERSONAL_BASRC_D_DIR"
+      fi
+      if [ -d "$PERSONAL_BASRC_D_DIR" ]; then
+         cp "$PERSONAL_TEMPLATES_DIR/$1" "$PERSONAL_BASRC_D_DIR/$1"
+      fi
+   fi
+}
+
+apply_var_to_template_in_bashrc_d () {
+   local filepathToApply="$PERSONAL_BASRC_D_DIR/$1"
+   apply_var_to_template $filepathToApply $2 $3
+}
+

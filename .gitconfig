@@ -1,7 +1,9 @@
 [user]
-	email = 20874904+polachz@users.noreply.github.com
-	name = polachz
+	email = zdenek.polach@nxp.com
+	name = Zdenek Polach
 [core]
 	editor = vim
 [submodule]
 	recurse = true
+[fetch]
+	prune = true

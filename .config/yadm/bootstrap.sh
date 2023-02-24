@@ -7,13 +7,13 @@ BOOTSTRAP_DIR=$(dirname "$BOOTSTRAP_SCRIPT_PATH")
 if [ ! -d "$BOOTSTRAP_DIR" ]; then BOOTSTRAP_DIR="$PWD"; fi
 
 if [ -d ~/.myconfig/bash  ]; then
-   BASH_PERSONAL_CFG_DIR="$HOME/.myconfig/bash"
+   PERSONAL_BASH_CFG_DIR="$HOME/.myconfig/bash"
 else
    echo "Unable to find bash config dir !!"
    exit 1
 fi
-if [ -f "$BASH_PERSONAL_CFG_DIR/functions.sh" ]; then
-    . "$BASH_PERSONAL_CFG_DIR/functions.sh"
+if [ -f "$PERSONAL_BASH_CFG_DIR/functions.sh" ]; then
+    . "$PERSONAL_BASH_CFG_DIR/functions.sh"
 else
    echo "Unable to include functions.sh file. Bootstrap failed"
    exit 1
@@ -28,11 +28,11 @@ if [ -f "$RESOURCE_FILE_TO_MODIFY" ]; then
       echo '#'  >>  "$RESOURCE_FILE_TO_MODIFY"
       echo ''  >>  "$RESOURCE_FILE_TO_MODIFY"
       echo 'if [ -d ~/.myconfig/bash ]; then' >>  "$RESOURCE_FILE_TO_MODIFY"
-      echo '   export BASH_PERSONAL_CFG_DIR="$HOME/.myconfig/bash"' >>  "$RESOURCE_FILE_TO_MODIFY"
+      echo '   export PERSONAL_BASH_CFG_DIR="$HOME/.myconfig/bash"' >>  "$RESOURCE_FILE_TO_MODIFY"
       echo 'fi'  >>  "$RESOURCE_FILE_TO_MODIFY"
       echo '   '  >>  "$RESOURCE_FILE_TO_MODIFY"
-      echo 'if [ -f "$BASH_PERSONAL_CFG_DIR/bashrc.sh" ]; then'  >>  "$RESOURCE_FILE_TO_MODIFY"
-      echo '   . "$BASH_PERSONAL_CFG_DIR/bashrc.sh"'  >>  "$RESOURCE_FILE_TO_MODIFY"
+      echo 'if [ -f "$PERSONAL_BASH_CFG_DIR/bashrc.sh" ]; then'  >>  "$RESOURCE_FILE_TO_MODIFY"
+      echo '   . "$PERSONAL_BASH_CFG_DIR/bashrc.sh"'  >>  "$RESOURCE_FILE_TO_MODIFY"
       echo 'fi'  >>  "$RESOURCE_FILE_TO_MODIFY"
       echo ''  >>  "$RESOURCE_FILE_TO_MODIFY"
    else
