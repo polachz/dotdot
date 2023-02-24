@@ -1,7 +1,12 @@
 #!/bin/bash
 
-#include common functions 
-. "$PERSONAL_BASH_CFG_DIR/functions.sh"
+#include common functions
+if [ -f "$PERSONAL_BASH_CFG_DIR/functions.sh" ]; then
+    . "$PERSONAL_BASH_CFG_DIR/functions.sh"
+else
+   echo "Unable to include functions.sh file. Bootstrap failed"
+   exit 1
+fi
 
 sudo dnf install -y podman podman-remote
 systemctl enable --now --user podman.socket
