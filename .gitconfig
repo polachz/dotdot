@@ -5,3 +5,5 @@
 	editor = vim
 [submodule]
 	recurse = true
+[fetch]
+	prune = true

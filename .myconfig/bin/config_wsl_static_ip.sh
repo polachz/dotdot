@@ -76,8 +76,8 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-if [ -f "$BASH_PERSONAL_CFG_DIR/functions.sh" ]; then
-   . "$BASH_PERSONAL_CFG_DIR/functions.sh"
+if [ -f "$PERSONAL_BASH_CFG_DIR/functions.sh" ]; then
+   . "$PERSONAL_BASH_CFG_DIR/functions.sh"
 else
     echo "External function definitions not available. Can't continue!!"
     exit 1
